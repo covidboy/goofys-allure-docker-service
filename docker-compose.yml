@@ -1,0 +1,15 @@
+version: '3'
+services:
+  goofys-allure:
+    image: "ssubhabrata/goofys-allure-docker-service:v1"
+    user: root
+    environment:
+      BUCKET=bucket-name
+      AWS_ACCESS_KEY=aws_access_key_having_access_to_bucket
+      AWS_SECRET_KEY=aws_secret_key of same user
+      CHECK_RESULTS_EVERY_SECONDS=1
+      KEEP_HISTORY=1
+      KEEP_HISTORY_LATEST=10
+      REGION=bucket_region    
+    ports:
+      - "5050:5050"
